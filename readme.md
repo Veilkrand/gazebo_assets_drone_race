@@ -1,0 +1,28 @@
+# ROS Gazebo Assets for race drone simulation
+
+> Alberto S. Naranjo Galet. Dec. 2018
+> This project is licensed under the terms of the MIT license.
+
+Some assets to start simulating a simple drone race track in Gazebo. Markers are made using Aruco markers with a 4x4 dictionary. Dimensions are 0.5mx0.5m
+To finish one lap you need to navigate the closest gate (from the front of the drone) and then land in the landing spot. For more than one lap the landing spot is a regular gate you need to pass 1 meter above.
+Gate are solid and you can't cross them, use a point in space 1 meter above the center of the marker with the same pose.
+
+## Instalation
+Deploy in your Catkin workspace `/src` and build the packages `catkin build`. Package name is `gazebo_assets`
+
+## Custom models
+Copy the models directly to `~/.gazebo/models/` or source the folder in order to Gazebo find the models and textures.
+
+## Launch world
+Use the launch file to run Gazebo with the world model:
+`$ roslaunch gazebo_assets test_track.world`
+
+## Markers 
+Markers are made using Aruco markers with a 4x4 dictionary. Dimensions are 0.5mx0.5m
+
+### Regular marker
+Regular are gates are ID: 10.
+
+### Landing spot / Race start 
+Landing spots are ID: 7. They also function as a gate (e.g. pass 1 meter above the point) for more than 1 lap race. The landing spot pose is the same as the race start pose.
+
