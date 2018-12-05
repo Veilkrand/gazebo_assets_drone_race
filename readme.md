@@ -1,7 +1,8 @@
 # ROS Gazebo Assets for race drone simulation
-
-> Alberto S. Naranjo Galet. Dec. 2018
+> Alberto S. Naranjo Galet. Dec. 2018.
 > This project is licensed under the terms of the MIT license.
+
+![Race Track](https://github.com/Veilkrand/gazebo_assets_drone_race/blob/master/images/default_gzclient_camera(1)-2018-12-05T13_20_12.687049.jpg)
 
 Some assets to start simulating a simple drone race track in Gazebo. Markers are made using Aruco markers with a 4x4 dictionary. Dimensions are 0.5mx0.5m
 To finish one lap you need to navigate the closest gate (from the front of the drone) and then land in the landing spot. For more than one lap the landing spot is a regular gate you need to pass 1 meter above.
@@ -26,3 +27,4 @@ Regular are gates are ID: 10.
 ### Landing spot / Race start 
 Landing spots are ID: 7. They also function as a gate (e.g. pass 1 meter above the point) for more than 1 lap race. The landing spot pose is the same as the race start pose.
 
+![Race Track](https://github.com/Veilkrand/gazebo_assets_drone_race/blob/master/images/default_gzclient_camera(1)-2018-12-05T13_20_42.093154.jpg)
