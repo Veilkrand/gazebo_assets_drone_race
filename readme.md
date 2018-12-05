@@ -9,16 +9,18 @@ To finish one lap you need to navigate the closest gate (from the front of the d
 Gate are solid and you can't cross them, use a point in space 1 meter above the center of the marker with the same pose.
 
 ## Instalation
-Deploy in your Catkin workspace `/src` and build the packages `catkin build`. Source the workspace `$ . /devel/setup.bash`. Package name is `gazebo_assets_drone_race`
-
-## Custom models
-Copy the models directly to `~/.gazebo/models/` or source the folder in order to Gazebo find the models and textures.
+Deploy in your Catkin workspace `/src` and build the packages `catkin build`. Source the workspace `$ . /devel/setup.bash`. Package name is `gazebo_assets_drone_race`.
 
 ## Launch world
-Use the launch file to run Gazebo with the world model:
+Run `$ ./run_gazebo_world.sh` to launch Gazebo with `test_track.world` and the local models.
+
+You can use the launch file to run Gazebo with the world model as well if you have sourced the new models:
 `$ roslaunch gazebo_assets_drone_race test_track.world`
 
-## Markers 
+## Custom models
+-- Aruco markers
+
+## Aruco MarkersMarkers 
 Markers are made using Aruco markers with a 4x4 dictionary. Dimensions are 0.5mx0.5m
 
 ### Regular marker
