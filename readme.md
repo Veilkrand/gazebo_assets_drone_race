@@ -9,7 +9,7 @@ To finish one lap you need to navigate the closest gate (from the front of the d
 Gate are solid and you can't cross them, use a point in space 1 meter above the center of the marker with the same pose.
 
 ## Instalation
-Deploy in your Catkin workspace `/src` and build the packages `catkin build`. Package name is `gazebo_assets`
+Deploy in your Catkin workspace `/src` and build the packages `catkin build`. Source the workspace `$ . /devel/setup.bash`. Package name is `gazebo_assets`
 
 ## Custom models
 Copy the models directly to `~/.gazebo/models/` or source the folder in order to Gazebo find the models and textures.
