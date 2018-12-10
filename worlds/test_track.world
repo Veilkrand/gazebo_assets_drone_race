@@ -140,7 +140,7 @@
     <state world_name='default'>
       <sim_time>0 0</sim_time>
       <real_time>0 0</real_time>
-      <wall_time>1543983608 105747252</wall_time>
+      <wall_time>1544441347 216287536</wall_time>
       <iterations>0</iterations>
       <model name='aruco_4x4_10_0'>
         <pose frame=''>-3.43295 1.13137 1.17771 0 -0 0</pose>
@@ -173,20 +173,10 @@
         </link>
       </model>
       <model name='aruco_4x4_10_3'>
-        <pose frame=''>-8.16879 -7.373 2.77515 0 -0 2.52009</pose>
+        <pose frame=''>-6.41389 -7.30975 2.77515 0 -0 2.52009</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>-8.16879 -7.373 2.77515 0 -0 2.52009</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='aruco_4x4_10_4'>
-        <pose frame=''>-6.74534 -8.1032 2.56514 0 0 -3.1392</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-6.74534 -8.1032 2.56514 0 0 -3.1392</pose>
+          <pose frame=''>-6.41389 -7.30975 2.77515 0 -0 2.52009</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -243,10 +233,10 @@
         </link>
       </model>
       <model name='aruco_4x4_10_4_clone_clone_clone_clone_clone_clone'>
-        <pose frame=''>4.19107 7.75794 2.84484 0 -0 0.69089</pose>
+        <pose frame=''>3.63155 6.28969 2.84484 0 -0 0.69089</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>4.19107 7.75794 2.84484 0 -0 0.69089</pose>
+          <pose frame=''>3.63155 6.28969 2.84484 0 -0 0.69089</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -288,7 +278,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>4.39246 2.8012 2.0507 -0 0.207691 -2.86296</pose>
+        <pose frame=''>11.8155 3.98007 41.9388 0 1.4018 -3.13451</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -552,58 +542,6 @@
         <gravity>1</gravity>
       </link>
       <pose frame=''>-8.11328 -8.41558 0 0 -0 0</pose>
-    </model>
-    <model name='aruco_4x4_10_4'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.015 0.5 0.5</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://aruco_4x4_10/materials/scripts</uri>
-              <uri>model://aruco_4x4_10/materials/textures</uri>
-              <name>aruco_4x4_10/Diffuse</name>
-            </script>
-          </material>
-        </visual>
-        <visual name='aruco_frame'>
-          <pose frame=''>-0.001 0 0 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.015 0.65 0.65</size>
-            </box>
-          </geometry>
-        </visual>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.015 0.65 0.65</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-      </link>
-      <pose frame=''>-6.74365 -8.8117 0 0 -0 0</pose>
     </model>
     <model name='aruco_4x4_10_4_clone'>
       <static>1</static>
