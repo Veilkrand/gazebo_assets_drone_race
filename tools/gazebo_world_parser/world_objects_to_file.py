@@ -11,7 +11,6 @@ def parse_pose(pose):
     return (float(p_list[0]), float(p_list[1]), float(p_list[2]), float(p_list[3]), float(p_list[4]), float(p_list[5]))
 
 def get_id_text_from_name(name, regex):
-    ''' It needs to be changed per case'''
 
     ids = re.compile(regex)
     match = ids.search(name)
@@ -27,7 +26,7 @@ if __name__=='__main__' :
     parser = argparse.ArgumentParser()
     parser.add_argument("input_file", help="Path to the .world file to process")
     parser.add_argument("object_name", help="String that the name of the object starts with, e.g.: 'aruco_4x4'")
-    parser.add_argument("regex", help="Regex rule string to match and extract the ID from the name of the object, e.g.: '4x4_(\d\d?)'")
+    parser.add_argument("regex", help="Regex rule string to match and extract the marker value ID from the name of the object, e.g.: '4x4_(\d\d?)'")
     args = parser.parse_args()
 
     #_filename = 'test_track.world'
@@ -41,7 +40,8 @@ if __name__=='__main__' :
 
     xmldoc = minidom.parse(_filename)
     world = xmldoc.getElementsByTagName('world')
-
+    
+    _id = 0 # unique id per gate starting at 0
     output = list()
 
     for model in world[0].childNodes:
@@ -50,15 +50,17 @@ if __name__=='__main__' :
             model_name = model.attributes['name'].value
             if model_name.startswith( _object_name):
                 model_object = {}
-                model_object['name'] = model_name
+                model_object['id'] = _id
+                _id+=1
+                model_object['name'] = model_name                
                 #print model_name
-                model_object['id'] = get_id_text_from_name(model_name,_regex)
+                model_object['marker_value'] = get_id_text_from_name(model_name,_regex)
                 for t in model.childNodes:
                     if t.nodeName == 'pose':
                         pose_text = t.firstChild.nodeValue
                         model_object['pose'] = parse_pose(pose_text)
                         break
-                print model_name, model_object['id'], model_object['pose']
+                print  model_object['id'], model_name, model_object['marker_value'], model_object['pose']
                 output.append(model_object)
                         
     if len(output) > 0:
