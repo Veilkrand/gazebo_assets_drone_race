@@ -1,11 +1,11 @@
 import json, io
 import re
-from xml.dom import minidom
+import xml.etree.ElementTree as ET
 import argparse
 
 
 def parse_pose(pose):
-
+    
     p_list = pose.split(' ')
 
     return (float(p_list[0]), float(p_list[1]), float(p_list[2]), float(p_list[3]), float(p_list[4]), float(p_list[5]))
@@ -37,31 +37,27 @@ if __name__=='__main__' :
     #_object_name = 'aruco_4x4'
     _object_name = args.object_name
 
-
-    xmldoc = minidom.parse(_filename)
-    world = xmldoc.getElementsByTagName('world')
+    
+    xmldoc = ET.parse(_filename)
+    world = xmldoc.find('world').find('state')
     
     _id = 0 # unique id per gate starting at 0
     output = list()
 
-    for model in world[0].childNodes:
-        # print model.nodeName
-        if model.nodeName == 'model':
-            model_name = model.attributes['name'].value
-            if model_name.startswith( _object_name):
-                model_object = {}
-                model_object['id'] = _id
-                _id+=1
-                model_object['name'] = model_name                
-                #print model_name
-                model_object['marker_value'] = get_id_text_from_name(model_name,_regex)
-                for t in model.childNodes:
-                    if t.nodeName == 'pose':
-                        pose_text = t.firstChild.nodeValue
-                        model_object['pose'] = parse_pose(pose_text)
-                        break
-                print  model_object['id'], model_name, model_object['marker_value'], model_object['pose']
-                output.append(model_object)
+    for model in world.findall('model'):
+        model_name = model.attrib['name']
+        if model_name.startswith( _object_name):
+            model_object = {}
+            model_object['id'] = _id
+            _id+=1
+            model_object['name'] = model_name                
+            #print model_name
+            model_object['marker_value'] = get_id_text_from_name(model_name,_regex)
+            pose_text = model.find('pose').text
+            model_object['pose'] = parse_pose(pose_text)
+           
+            print  model_object['id'], model_name, model_object['marker_value'], model_object['pose']
+            output.append(model_object)
                         
     if len(output) > 0:
 	    #print json.dumps(output, sort_keys = True, indent = 4, ensure_ascii = False)
