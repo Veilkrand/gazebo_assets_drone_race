@@ -2,7 +2,7 @@
 <sdf version='1.5'>
   <model name='iris_fpv_cam'>
     
-    <pose>0 0 0 0 0 3.1415</pose>
+    <pose>0 0 0 0 0 0</pose>
     
     <include>
       <uri>model://iris</uri>
