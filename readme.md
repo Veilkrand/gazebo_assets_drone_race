@@ -12,15 +12,18 @@ Gate are solid and you can't cross them, use a point in space 1 meter above the 
 Deploy in your Catkin workspace `/src` and build the packages `catkin build`. Source the workspace `$ . /devel/setup.bash`. Package name is `gazebo_assets_drone_race`.
 
 ## Launch world
-Change permissions `$ chmod +x run_gazebo_world.sh`. Run `$ ./run_gazebo_world.sh` to launch Gazebo with `test_track.world` and the local models.
+Run `$ ./run_gazebo_world.sh` to launch Gazebo with `test_track.world` and the local models.
 
 You can use the launch file to run Gazebo with the world model as well if you have sourced the new models:
 `$ roslaunch gazebo_assets_drone_race test_track.world`
 
+## Launch files
+New launch file for testing the assets with Gazebo Rotors.
+
 ## Custom models
 -- Aruco markers
 
-## Aruco MarkersMarkers 
+## Aruco Markers 
 Markers are made using Aruco markers with a 4x4 dictionary. Dimensions are 0.5mx0.5m
 
 ### Regular marker
